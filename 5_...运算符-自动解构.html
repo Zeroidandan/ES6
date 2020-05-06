@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>...运算符：自动解构</title>
+</head>
+
+<body>
+    <script>
+        // var [a, b, c] = [1, 2, 3];
+        // console.log(b);//2
+
+        // ********************************
+        // var [a, b, c] = [1, 2, 3, 4];
+        // console.log(c);//3   4没有人要
+
+        // ********************************
+        // var { a, b, c } = {
+        //     a: 11,
+        //     b: 22,
+        //     c: 33
+        // };
+        // console.log(b);//22
+
+        // ********************************
+        function fun({ a, b }) {
+            console.log(a + b);
+        }
+
+        fun({ a: 22, b: 22 });//44
+    </script>
+</body>
+
+</html>

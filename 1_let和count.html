@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let和count</title>
+</head>
+
+<body>
+    <script>
+        // let定义块级作用域
+        // {
+        //     let a = 10;
+        //     console.log(a);//10            
+        // }
+        // console.log(a);//报错
+        // ***********************************
+        // let没有变量提升
+        // console.log(a);
+        // var a = 20; //undefined
+
+        // console.log(a);
+        // let a = 30;//报错
+        // ***********************************
+        // 暂时性死区
+        // var a = 10;
+        // {
+        //     console.log(a);//报错，而不是10；
+        //     let a = 20;
+        // }
+        // ***********************************
+        // var arr =[];
+        // for (var i = 0; i < 10; i++) {
+        //     arr.push(function(){
+        //         console.log(i);
+        //     }); 
+        // }
+        // arr[1]();//10
+        // arr[2]();//10
+        // ***********************************
+        // var arr =[];
+        // for (var i = 0; i < 10; i++) {
+        //     (function(i){
+        //         console.log(i);              
+        //     })(i);
+        // }
+        // 输出1-9
+        // ***********************************
+        // for循环中使用let当做循环变量的定义词，就不需要使用IIFE了。
+        // var arr =[];
+        // for (let i = 0; i < 10; i++) {
+        //     arr.push(function(){
+        //         console.log(i);
+        //     }); 
+        // }
+        // arr[1]();//1
+        // arr[2]();//2
+        // ***********************************
+        // const定义常量
+        const a = 20;
+        console.log(a);
+
+    </script>
+</body>
+
+</html>

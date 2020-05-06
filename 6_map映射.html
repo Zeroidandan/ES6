@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map映射</title>
+</head>
+
+<body>
+    <script>
+        // 映射：在原数组的基础上，映射一个新数组，不会增加和删除项
+        // var arr0 = [1, 2, 3];
+        // var arr1 = arr0.map(item => item * 2);
+        // console.log(arr1);//[2, 4, 6]
+
+        // **********************************************
+        // var arr1 = [10, 20, 40, 50];
+        // var arr2 = arr1.map(item => item == 50 ? 80 : item);//三元运算符
+        // console.log(arr2);// [10, 20, 40, 80]
+
+        // **********************************************
+        // 把id为2的同学，分数改为99分
+        // var arr1 = [
+        //     { id: 1, name: 'AA', scort: 78 },
+        //     { id: 2, name: 'BB', scort: 89 },
+        //     { id: 3, name: 'CC', scort: 67 }
+        // ];
+        // var arr2 = arr1.map(item => item.id == 2 ? { ...item, scort: 99 } : item);
+        // console.log(arr2);
+
+        // **********************************************
+        // map两个参数
+        var arr1 = [100, 300, 200, 600, 400, 700];
+        var arr2 = arr1.map((item, index) => index == 5 ? 800 : item);
+        console.log(arr2);//[100, 300, 200, 600, 400, 800]
+
+    </script>
+</body>
+
+</html>

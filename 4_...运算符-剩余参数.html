@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>...运算符:剩余参数</title>
+</head>
+
+<body>
+    <script>
+        // function scort(io, ...fen) {
+        //     console.log(io);//3.4
+        //     console.log(fen);//[10, 9, 7, 8, 7, 10]
+        // }
+        // scort(3.4, 10, 9, 7, 8, 7, 10);
+
+        // 计算跳水比赛得分：去掉一个最高分，去掉一个最低分后的平均分再乘以难度系数
+        function scort(io, ...fen) {
+            var max = Math.max(...fen);
+            var min = Math.min(...fen);
+
+            var sum = fen.reduce((a, b) => a + b);
+
+            return (sum - max - min) / (fen.length - 2) * io;
+        }
+
+        var result = scort(3.4, 10, 10, 10, 9, 10);
+        console.log(result);
+
+    </script>
+</body>
+
+</html>

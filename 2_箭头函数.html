@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数</title>
+</head>
+
+<body>
+    <script>
+        // function fun(){
+        //     console.log('你好！');            
+        // }
+
+        // fun();
+        // *************************************
+        // 箭头函数
+        // const fun = () => {
+        //     console.log('HELLO!');
+        // };
+        // fun();
+
+        // *************************************
+        // 如果你的函数体当中只有一条语句，那么可以省略return和大括号
+        // const sum = (a, b) => a + b;
+        // console.log(sum(5, 6));
+
+        // *************************************
+        // 一个参数，可以省略传参的括号
+        // const cricle1 = r => 3.14 * 2 * r;
+        // console.log(cricle1(5));
+
+        // *************************************
+        // 如果返回值是对象，返回的对象一定要加一个圆括号
+        // const cricle2 = r => ({
+        //     mianji: 3.14 * r * r,
+        //     zhouchang: 3.14 * 2 * r
+        // });
+        // console.log(cricle2(5));
+
+
+        // ******************************************************************
+        // ※箭头函数的上下文，是定义时候的上下文，而不是运行时上下文※
+        // var obj ={
+        //     a:3,
+        //     fun:()=>{
+        //         console.log(this.a);
+        //     }
+        // };
+
+        // 对象打点没有用的，因为箭头函数是定义时候决定了上下文
+        // obj1.fun();     // undefined
+        // obj1.fun.call(obj1);    // 箭头函数的上下文不可能被更改
+
+        // ******************************************************************
+        function fun() {
+            return () => {
+                console.log(this.a);
+            }
+        }
+
+        var text1 = {
+            a: 10
+        };
+        var text2 = {
+            a: 20
+        };
+        var text3 = {
+            a: 30
+        };
+
+        // 箭头函数诞生是text1
+        var jiantou = fun.call(text1);
+        jiantou();//10
+        jiantou.call(text2);//10
+    </script>
+</body>
+
+</html>
